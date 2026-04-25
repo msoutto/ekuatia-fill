@@ -21,5 +21,8 @@
   "dependencies": {
     "@dotenvx/dotenvx": "^1.63.0",
     "playwright": "^1.59.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
   }
 }
