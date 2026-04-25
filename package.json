@@ -4,7 +4,7 @@
   "description": "Automated system for filling electronic invoices in the Ekuatia portal (Paraguay).",
   "main": "index.js",
   "scripts": {
-    "start": "npx dotenvx run -- node src/index.js"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
