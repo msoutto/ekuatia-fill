@@ -19,7 +19,7 @@ This project automates the navigation and data entry process for creating an ele
 ## Key Features
 1. **Manual Login Integration**: Navigates to the portal and waits for the user to authenticate.
 2. **Automated Navigation**: Moves through the "Emitir Documento Electrónico" section seamlessly.
-3. **Smart Data Entry**: Fills the "Factura Electrónica" form using data configured in a `.env` file.
+3. **Smart Data Entry**: Fills "Factura Electrónica" form using data configured in a `.env` file.
 4. **Verification**: Includes screenshot capture on failures for easier debugging.
 
 ## Getting Started

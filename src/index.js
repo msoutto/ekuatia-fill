@@ -18,6 +18,8 @@ const { InvoicePage } = require('./pages/InvoicePage');
 
   if (await dashboardPage.isLoaded()) {
     console.log("Dashboard loaded successfully.");
+    await dashboardPage.goToInvoiceEmission();
+    console.log("Navigated to invoice emission.");
     // Proceed with invoice filling if needed
   }
 
