@@ -1,0 +1,25 @@
+{
+  "name": "ekuatia-fill",
+  "version": "1.0.0",
+  "description": "Automated system for filling electronic invoices in the Ekuatia portal (Paraguay).",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx dotenvx run -- node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msoutto/ekuatia-fill.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/msoutto/ekuatia-fill/issues"
+  },
+  "homepage": "https://github.com/msoutto/ekuatia-fill#readme",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.63.0",
+    "playwright": "^1.59.1"
+  }
+}
