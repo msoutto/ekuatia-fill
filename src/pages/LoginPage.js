@@ -6,13 +6,15 @@ class LoginPage {
     this.url = 'https://ekuatia.set.gov.py/ekuatiai/';
   }
 
+  timeout = 60 * 1000;
+
   async navigate() {
     await this.page.goto(this.url);
   }
 
   async waitForManualLogin() {
     // Wait for the dashboard to be visible after manual login
-    await this.page.locator('text=PERFIL').waitFor({ state: 'visible', timeout: 180 });
+    await this.page.locator('text=PERFIL').waitFor({ state: 'visible', timeout: this.timeout });
     console.log("Login successful.");
   }
 }
