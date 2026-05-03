@@ -12,8 +12,7 @@ class LoginPage {
 
   async waitForManualLogin() {
     // Wait for the dashboard to be visible after manual login
-    // This replaces the deprecated waitForNavigation and discouraged networkidle
-    await this.page.locator('text=PERFIL').waitFor({ state: 'visible', timeout: 0 });
+    await this.page.locator('text=PERFIL').waitFor({ state: 'visible', timeout: 180 });
     console.log("Login successful.");
   }
 }
