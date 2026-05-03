@@ -20,8 +20,20 @@ const { InvoicePage } = require('./pages/InvoicePage');
     console.log("Dashboard loaded successfully.");
     await dashboardPage.goToInvoiceEmission();
     console.log("Navigated to invoice emission.");
-    // Proceed with invoice filling if needed
+
+    if (await invoicePage.isLoaded()) {
+      console.log("Invoice page loaded. Filling data...");
+      await invoicePage.fillInvoice({
+        recipientName: config.INVOICE_RECIPIENT_NAME,
+        recipientRuc: config.INVOICE_RECIPIENT_RUC,
+        totalAmount: config.INVOICE_TOTAL_AMOUNT
+      });
+      console.log("Invoice filling complete");
+      // Optional: await invoicePage.submitInvoice();
+    }
   }
+  
+  console.log("End of process");
 
   // await browser.close();
 })();
