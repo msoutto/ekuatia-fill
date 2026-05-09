@@ -18,7 +18,7 @@ Automate the navigation and data entry process for creating an electronic invoic
 - [x] Task 2.2: Implement `src/pages/DashboardPage.js` and integrate into `src/index.js` after login.
 - [x] Task 2.3: Implement basic `src/pages/InvoicePage.js` and integrate into `src/index.js` to complete the flow.
 - [x] Task 2.4: Implement navigation to 'Emitir Documento Electrónico' in `src/pages/DashboardPage.js` and integrate into `src/index.js`.
-- [ ] Task 2.5: Implement automated login credential filling in `src/pages/LoginPage.js` using values from environment variables via `dotenvx`.
+- [x] Task 2.5: Implement automated login credential filling in `src/pages/LoginPage.js` using values from environment variables via `dotenvx`.
 
 ### 3. Advanced Invoice Implementation (AVANZADA)
 - [ ] Task 3.1: Update `src/pages/InvoicePage.js` to support "AVANZADA" modality and "Prestación de Servicios".

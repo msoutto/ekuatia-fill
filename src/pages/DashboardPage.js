@@ -9,7 +9,9 @@ class DashboardPage {
   }
 
   async goToInvoiceEmission() {
-    await this.page.click('text=Emitir Documento Electrónico');
+    await this.page.getByRole('button', { name: 'Menú' }).click();
+    await this.page.getByRole('heading', { name: 'Mis DTEs' }).click();
+    await this.page.getByRole('link', { name: 'Emitir Documento Electrónico' }).click();
   }
 }
 

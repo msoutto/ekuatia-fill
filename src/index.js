@@ -7,14 +7,22 @@ const { InvoicePage } = require('./pages/InvoicePage');
 (async () => {
   const browser = await chromium.launch({ headless: false });
   const page = await browser.newPage();
-  
+
   const loginPage = new LoginPage(page);
   const dashboardPage = new DashboardPage(page);
   const invoicePage = new InvoicePage(page);
 
   await loginPage.navigate();
-  console.log("Please log in manually...");
-  await loginPage.waitForManualLogin();
+
+  // Attempt automated login if credentials are provided
+  if (config.EKUATIA_USER && config.EKUATIA_PASSWORD) {
+    await loginPage.login(config.EKUATIA_USER, config.EKUATIA_PASSWORD);
+  } else {
+    console.log("Credentials missing in .env. Please log in manually...");
+  }
+
+  // Always wait for success (handles manual intervention if CAPTCHA or auto-fill fails)
+  await loginPage.waitForLoginSuccess();
 
   if (await dashboardPage.isLoaded()) {
     console.log("Dashboard loaded successfully.");
@@ -23,11 +31,7 @@ const { InvoicePage } = require('./pages/InvoicePage');
 
     if (await invoicePage.isLoaded()) {
       console.log("Invoice page loaded. Filling data...");
-      await invoicePage.fillInvoice({
-        recipientName: config.INVOICE_RECIPIENT_NAME,
-        recipientRuc: config.INVOICE_RECIPIENT_RUC,
-        totalAmount: config.INVOICE_TOTAL_AMOUNT
-      });
+      await invoicePage.fillInvoice(config);
       console.log("Invoice filling complete");
       // Optional: await invoicePage.submitInvoice();
     }
